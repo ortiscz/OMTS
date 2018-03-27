@@ -23,13 +23,13 @@
                 <div class="login-container container-dark-blue card">
                     <div class="card-body">
                         <h1 class="card-title text-center h3 blue mb-4">OMTS portal login</h1>
-                        <form class="login-form">
+                        <form class="login-form" action="./scripts/login.php" method="post">
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <img src="assets/img/icon-user.png" class="input-group-text" id="icon-user">
                                     </div>
-                                    <input class="form-control" type="text" placeholder="USERNAME" required aria-label="Username" aria-describedby="icon-user">
+                                    <input class="form-control" type="text" placeholder="EMAIL ADDRESS" required aria-label="Username" aria-describedby="icon-user" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -37,7 +37,7 @@
                                     <div class="input-group-prepend">
                                         <img src="assets/img/icon-password.png" class="input-group-text" id="icon-password">
                                     </div>
-                                    <input class="form-control" type="password" placeholder="PASSWORD" required aria-describedby="icon-password">
+                                    <input class="form-control" type="password" placeholder="PASSWORD" required aria-describedby="icon-password" name="password">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">LOGIN</button>
@@ -58,17 +58,17 @@
                     <a class="register-close white" data-dismiss="modal" href="javascript:void()">x</a>
                     <div class="continer">
                         <h1 class="modal-title text-center h3 blue mb-4 mt-2">Create an account!</h1>
-                        <form class="register-form" action="./scripts/login.php" method="POST">
+                        <form class="register-form" action="./scripts/register.php" method="post">
                             <div class="form-group row">
                                 <label for="register-email" class="col-sm-4 col-form-label text-right white">Email address</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="register-email">
+                                    <input type="email" class="form-control" name="register-email">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-password" class="col-sm-4 col-form-label text-right white">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="register-password">
+                                    <input type="password" class="form-control" name="register-password">
                                 </div>
                             </div>
                             <hr>
@@ -76,37 +76,49 @@
                             <div class="form-group row">
                                 <label for="register-fname" class="col-sm-4 col-form-label text-right white">First name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-fname">
+                                    <input type="text" class="form-control" name="register-fname">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-lname" class="col-sm-4 col-form-label text-right white">Last name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-lname">
+                                    <input type="text" class="form-control" name="register-lname">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-city" class="col-sm-4 col-form-label text-right white">City</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-city">
+                                    <input type="text" class="form-control" name="register-city">
                                 </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-streetnum" class="col-sm-4 col-form-label text-right white">street number</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="register-streetnum">
+                                </div>                                
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-streetname" class="col-sm-4 col-form-label text-right white">street name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="register-streetname">
+                                </div>                                
                             </div>
                             <div class="form-group row">
                                 <label for="register-state" class="col-sm-4 col-form-label text-right white">State</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-state">
+                                    <input type="text" class="form-control" name="register-state">
                                 </div>                                
                             </div>
                             <div class="form-group row">
                                 <label for="register-zip" class="col-sm-4 col-form-label text-right white">ZIP</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="register-zip">
+                                    <input type="text" class="form-control" name="register-zip">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-phone" class="col-sm-4 col-form-label text-right white">Phone</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-phone">
+                                    <input type="text" class="form-control" name="register-phone">
                                 </div>                                
                             </div>
                             <hr>
@@ -114,19 +126,19 @@
                             <div class="form-group row">
                                 <label for="register-card" class="col-sm-4 col-form-label text-right white">Card number</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="register-card">
+                                    <input type="text" class="form-control" name="register-card">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-expiration" class="col-sm-4 col-form-label text-right white">Card expiration</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="register-expiration" placeholder="MM/YY">
+                                    <input type="text" class="form-control" name="register-expiration" placeholder="MM/YY">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="register-ccv" class="col-sm-4 col-form-label text-right white">CCV</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="register-ccv" placeholder="123">
+                                    <input type="text" class="form-control" name="register-ccv" placeholder="123">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">Submit</button>                            
