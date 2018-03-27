@@ -1,33 +1,65 @@
 /* CSS - by Petr Tichý */
-body{
-	overflow: hidden;
+
+body {
+    overflow: hidden;
 }
-.blue{
-	color: #0170e5;
+
+.blue {
+    color: #0170e5;
 }
-.white{
-	color: white;
+
+.white {
+    color: white;
 }
-.visual{
-	height: 100vh;
-	width: 100vw;
-	object-fit: cover;
-	z-index: 1;	
-	position: absolute;
+
+.visual {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
 }
-.visual-cover{
-	position: absolute;
-	left: 0;
-	top: 0;
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url('../img/tile.png');
-	z-index: 2;
+
+.visual-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../img/tile.png');
+    z-index: 2;
 }
-.login-container{
-	margin-top: 30vh;
-	z-index: 3;
-	background-color: #000c19;
-	opacity: .9;
+
+.container-dark-blue {
+    background-color: #000c19;
+    opacity: .92;
+}
+
+.login-container {
+    margin-top: 30vh;
+    z-index: 3;
+    opacity: .9;
+}
+
+.register-container {
+    margin-top: 10vh;
+}
+
+.register-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: #0170e5;
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 17px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #0170e5;
+}
+.register-close:hover{
+	text-decoration: none;
 }

@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 col-xs-9 col-sm-8 col-md-6 col-lg-4">
-                <div class="login-container card">
+                <div class="login-container container-dark-blue card">
                     <div class="card-body">
                         <h1 class="card-title text-center h3 blue mb-4">OMTS portal login</h1>
                         <form class="login-form">
@@ -41,8 +41,95 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">LOGIN</button>
-                            <p class="message text-center white">Not registered? <a href="#">Create an account</a></p>
+                            <p class="message text-center white">Not registered? <a href="javascript:void();" data-toggle="modal" data-target="#registrationModal">Create an account</a></p>
                             <p class="text-center white"><small><em>::dev only:: GO TO <a href="project.php">PROJECT PAGE</a></em></small></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The Registration Modal -->
+    <div class="modal fade" id="registrationModal">
+        <div class="modal-dialog">
+            <div class="modal-content container-dark-blue">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <a class="register-close white" data-dismiss="modal" href="javascript:void()">x</a>
+                    <div class="continer">
+                        <h1 class="modal-title text-center h3 blue mb-4 mt-2">Create an account!</h1>
+                        <form class="register-form">
+                            <div class="form-group row">
+                                <label for="register-email" class="col-sm-4 col-form-label text-right white">Email address</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="register-email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-password" class="col-sm-4 col-form-label text-right white">Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="register-password">
+                                </div>
+                            </div>
+                            <hr>
+                            <h2 class="text-center h6 blue mb-2">Detail information</h2>
+                            <div class="form-group row">
+                                <label for="register-fname" class="col-sm-4 col-form-label text-right white">First name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-fname">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-lname" class="col-sm-4 col-form-label text-right white">Last name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-lname">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-city" class="col-sm-4 col-form-label text-right white">City</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-city">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-state" class="col-sm-4 col-form-label text-right white">State</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-state">
+                                </div>                                
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-zip" class="col-sm-4 col-form-label text-right white">ZIP</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="register-zip">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-phone" class="col-sm-4 col-form-label text-right white">Phone</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-phone">
+                                </div>                                
+                            </div>
+                            <hr>
+                            <h2 class="text-center h6 blue mb-2 blue">Card information</h2>
+                            <div class="form-group row">
+                                <label for="register-card" class="col-sm-4 col-form-label text-right white">Card number</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="register-card">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-expiration" class="col-sm-4 col-form-label text-right white">Card expiration</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="register-expiration" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="register-ccv" class="col-sm-4 col-form-label text-right white">CCV</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="register-ccv" placeholder="123">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">Submit</button>                            
                         </form>
                     </div>
                 </div>
