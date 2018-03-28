@@ -19,7 +19,7 @@
 			<th>Surname</th>
 			<th>Street</th>
 			<th>Street No</th>
-			<th>City</th>
+			<th>City</th>			
 			<th>State</th>
 			<th>ZIP</th>
 			<th>Actions</th>			
