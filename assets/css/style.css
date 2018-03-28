@@ -42,11 +42,11 @@ body {
     opacity: .9;
 }
 
-.register-container {
+.register-container, .add-container {
     margin-top: 10vh;
 }
 
-.register-close {
+.register-close, .add-close {
     position: absolute;
     right: 15px;
     top: 15px;
@@ -60,6 +60,11 @@ body {
     border-radius: 50%;
     border: 1px solid #0170e5;
 }
-.register-close:hover{
+.register-close:hover, .add-close:hover{
 	text-decoration: none;
+}
+.no-style-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
