@@ -18,13 +18,13 @@
 				    <a class="nav-link" href="./members.php">Members</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Theatres</a>
+				    <a class="nav-link" href="./theatres.php">Theatres</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Movies</a>
+				    <a class="nav-link" href="./movies.php">Movies</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Statistics</a>
+				    <a class="nav-link" href="./statistics.php">Statistics</a>
 				  </li>
 				</ul> 				
 			</div>
