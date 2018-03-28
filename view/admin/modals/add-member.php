@@ -47,18 +47,18 @@
                                     <input type="text" class="form-control" name="add-city">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="add-streetnum" class="col-sm-4 col-form-label text-right white">Street number</label>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" name="add-streetnum" id="add-streetnum">
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
+                             <div class="form-group row">
                                 <label for="add-streetname" class="col-sm-4 col-form-label text-right white">Street name</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="add-streetname" id="add-streetname">
                                 </div>                                
                             </div>
+                            <div class="form-group row">
+                                <label for="add-streetnum" class="col-sm-4 col-form-label text-right white">Street number</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="add-streetnum" id="add-streetnum">
+                                </div>                                
+                            </div>                           
                             <div class="form-group row">
                                 <label for="add-state" class="col-sm-4 col-form-label text-right white">State</label>
                                 <div class="col-sm-8">
@@ -97,7 +97,7 @@
                                     <input type="text" class="form-control" name="add-ccv" id="add-ccv" placeholder="123">
                                 </div>
                             </div>
-                            <button type="submit" name="submit" class="btn btn-primary btn-block mb-4 mt-4">Submit</button>                            
+                            <button type="submit" name="add-member" class="btn btn-primary btn-block mb-4 mt-4">Submit</button>                            
                         </form>
                     </div>
                 </div>
