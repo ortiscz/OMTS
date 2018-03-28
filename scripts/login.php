@@ -6,6 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "omts_at51";
+
   /* try connecting to the database. */
   try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
