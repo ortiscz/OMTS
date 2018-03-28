@@ -61,17 +61,26 @@ if(isset($_POST['del-complex'])){
 	    echo "Connection failed: " . $e->getMessage();
 	}
 } 
-if(isset($_POST['del-complex'])){
+if(isset($_POST['update-complex'])){ 
 	try {
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 	    // set the PDO error mode to exception
-	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
 
-		$sql = 'DELETE FROM complex WHERE id = '.$_POST['del-complex'];  
+		$sql = 
+		'UPDATE complex SET 
+			`name` = "'.$_POST['update-name'].'",
+			`street_Name`= "'.$_POST['update-streetname'].'",
+			`street_Number`= '.$_POST['update-streetnum'].',
+			`city` = "'.$_POST['update-city'].'",
+			`state` = "'.$_POST['update-state'].'", 
+			`zip` = "'.$_POST['update-zip'].'", 
+			`phone` = "'.$_POST['update-phone'].'" WHERE id = '. $_POST['update-complexId'];; 
+
 
 		if ($conn->query($sql)) {
 	        //echo "Success";
-	        echo '<script type="text/javascript">alert("Complex was deleted!"); window.location="complexes.php"; </script>';
+	        echo '<script type="text/javascript">alert("Complex was updated!"); window.location="complexes.php"; </script>';
 	    }
 	    else{
 	        echo "error";
@@ -80,7 +89,7 @@ if(isset($_POST['del-complex'])){
 	    $dbh = null;
 	    }
 	catch(PDOException $e){
-	    echo "Connection failed: " . $e->getMessage();
+	    echo "Connection failed: " . $e->getMessage();	   
 	}
 }  
 ?>
@@ -143,54 +152,55 @@ if(isset($_POST['del-complex'])){
 
                         <form class="update-form" action="" method="post">   
                             <div class="form-group row">
-                                <label for="add-name" class="col-sm-4 col-form-label text-right white">Complex name</label>
+                                <label for="update-name" class="col-sm-4 col-form-label text-right white">Complex name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="add-name" id="add-name"
+                                    <input type="text" class="form-control" name="update-name" id="update-name"
                                     value="'.$row['name'].'">
                                 </div>                                
                             </div>                        
                              <div class="form-group row">
-                                <label for="add-streetname" class="col-sm-4 col-form-label text-right white">Street name</label>
+                                <label for="update-streetname" class="col-sm-4 col-form-label text-right white">Street name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="add-streetname" id="add-streetname"
+                                    <input type="text" class="form-control" name="update-streetname" id="update-streetname"
                                     value="'.$row['street_Name'].'">
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <label for="add-streetnum" class="col-sm-4 col-form-label text-right white">Street number</label>
+                                <label for="update-streetnum" class="col-sm-4 col-form-label text-right white">Street number</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" name="add-streetnum" id="add-streetnum"
+                                    <input type="text" class="form-control" name="update-streetnum" id="update-streetnum"
                                     value="'.$row['street_Number'].'">
                                 </div>                                
                             </div>    
                             <div class="form-group row">
-                                <label for="add-city" class="col-sm-4 col-form-label text-right white">City</label>
+                                <label for="update-city" class="col-sm-4 col-form-label text-right white">City</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="add-city" id="add-city"
+                                    <input type="text" class="form-control" name="update-city" id="update-city"
                                     value="'.$row['city'].'">
                                 </div>                                
                             </div>                       
                             <div class="form-group row">
-                                <label for="add-state" class="col-sm-4 col-form-label text-right white">State</label>
+                                <label for="update-state" class="col-sm-4 col-form-label text-right white">State</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="add-state" id="add-state"
+                                    <input type="text" class="form-control" name="update-state" id="update-state"
                                     value="'.$row['state'].'">
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <label for="add-zip" class="col-sm-4 col-form-label text-right white">ZIP</label>
+                                <label for="update-zip" class="col-sm-4 col-form-label text-right white">ZIP</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" name="add-zip" id="add-zip"
+                                    <input type="text" class="form-control" name="update-zip" id="update-zip"
                                     value="'.$row['zip'].'">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="add-phone" class="col-sm-4 col-form-label text-right white">Phone</label>
+                                <label for="update-phone" class="col-sm-4 col-form-label text-right white">Phone</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="add-phone" id="add-phone"
+                                    <input type="text" class="form-control" name="update-phone" id="update-phone"
                                     value="'.$row['phone'].'">
                                 </div>                                
-                            </div>                           
+                            </div>   
+                            <input type="hidden" value="'.$row['id'].'" name="update-complexId" />                          
                             <button type="submit" name="update-complex" class="btn btn-primary btn-block mb-4 mt-4">Update</button>                            
                         </form>
                     </div>

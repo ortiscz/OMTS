@@ -12,7 +12,7 @@
 				</div>
 				<ul class="nav nav-pills flex-column">
 				  <li class="nav-item">
-				    <a class="nav-link" href="./index.php">Purchases</a>
+				    <a class="nav-link" href="./index.php">Home</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="./members.php">Members</a>
@@ -25,9 +25,6 @@
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="./movies.php">Movies</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="./statistics.php">Statistics</a>
 				  </li>
 				</ul> 				
 			</div>

@@ -6,7 +6,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "omts_at51";
+	$dbname = "omts";
 
 if(isset($_POST["submit"])){
 	try {
@@ -75,13 +75,11 @@ if(isset($_POST['del_user'])){
 	<thead>
 		<tr>
 			<th>ID</th>
-			<th>Name</th>
-			<th>Surname</th>
-			<th>Street</th>
-			<th>Street No</th>
-			<th>City</th>			
-			<th>State</th>
-			<th>ZIP</th>
+			<th>Title</th>
+			<th>Duration</th>
+			<th>Rating</th>
+			<th colspan="2">Director</th>
+			<th>Production</th>			
 			<th>Actions</th>			
 		</tr>
 	</thead>
@@ -90,7 +88,8 @@ if(isset($_POST['del_user'])){
 	  try{
 	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-	    $sql = "SELECT id, fname, lname, street_name, street_number, city, state, zip FROM `users`;";
+	    $sql = "SELECT movie.id, title, duration, rating, director.fname, director.lname, production FROM movie
+LEFT JOIN director ON movie.director_id = director.id";
 	    $sth = $conn->prepare($sql);
 	    
 	    if(!$sth->execute()) {
@@ -121,6 +120,5 @@ if(isset($_POST['del_user'])){
 </table>
 
 <?php
- 	include './member/add-modal.php';
 	include './partials/body_end.php';
 ?>			

@@ -6,7 +6,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "omts_at51";
+	$dbname = "omts";
 
 if(isset($_POST["submit"])){
 	try {
@@ -68,21 +68,16 @@ if(isset($_POST['del_user'])){
 }   
 ?>
 <h1>Theatres</h1>
-
-<a href="javascript:void();" data-toggle="modal" data-target="#addModal" class="btn btn-primary mt-2 mb-4">+ New</a>
-
+<a href="javascript:void();" class="btn btn-primary mt-2 mb-4">+ New</a>
 <table>
 	<thead>
 		<tr>
 			<th>ID</th>
-			<th>Name</th>
-			<th>Surname</th>
-			<th>Street</th>
-			<th>Street No</th>
-			<th>City</th>			
-			<th>State</th>
-			<th>ZIP</th>
-			<th>Actions</th>			
+			<th>Theater</th>
+			<th>Complex</th>
+			<th>Seats available</th>
+			<th>Screen size</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 <?php	
@@ -90,7 +85,9 @@ if(isset($_POST['del_user'])){
 	  try{
 	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-	    $sql = "SELECT id, fname, lname, street_name, street_number, city, state, zip FROM `users`;";
+	    $sql = "SELECT theatre.id, theatre.name as 'tname', complex.name, max_seats, screen FROM theatre
+LEFT JOIN complex ON theatre.complex_id = complex.id;";
+	    
 	    $sth = $conn->prepare($sql);
 	    
 	    if(!$sth->execute()) {
@@ -119,8 +116,6 @@ if(isset($_POST['del_user'])){
 ?>
 
 </table>
-
 <?php
- 	include './member/add-modal.php';
 	include './partials/body_end.php';
 ?>			

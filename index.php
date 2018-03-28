@@ -42,7 +42,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">LOGIN</button>
                             <p class="message text-center white">Not registered? <a href="javascript:void();" data-toggle="modal" data-target="#registrationModal">Create an account</a></p>
-                            <p class="text-center white"><small><em>::dev only:: GO TO <a href="project.php">PROJECT PAGE</a></em></small></p>
                         </form>
                     </div>
                 </div>

@@ -11,6 +11,9 @@ body {
     background-color: #000c19;
     height: 100vh;
 }
+.disabled{
+    opacity: .5;
+}
 .bg-grey{    
     background: url('../img/tile.png');
     background-color: #666;

@@ -28,6 +28,7 @@ try {
     /*VAVLUES(Account no, isAdmin, password, fname, lname, str name, str num, city, state, zip, phone, email, card num, card expir)*/
     $conn->exec($sql);
     echo "The insert has been complete";
+    echo '<script type="text/javascript">alert("The registration has been complete"); window.location="index.php"; </script>';
     }
 catch(PDOException $e){
     echo "Connection failed: " . $e->getMessage();

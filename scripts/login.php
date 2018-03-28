@@ -22,7 +22,12 @@ $dbname = "omts_at51";
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     /* The Given password + email match up to a user! */
     if($row){
-        echo "You have sucessfully logged in Petr will handle you from now on";
+        if($row['isAdmin'] == 1){
+           echo '<script type="text/javascript">alert("Welcome '.$row['fname'].'!"); window.location="../view/admin/index.php"; </script>';
+        }else{
+          echo '<script type="text/javascript">alert("Welcome '.$row['fname'].'!"); window.location="../view/user/index.php"; </script>';
+
+        };
     }
     else{
         echo "You were unable to login with the password and username you selected";

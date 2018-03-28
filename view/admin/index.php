@@ -3,7 +3,7 @@
 	include './partials/body_start.php';
 ?>
 
-<h1>Welcome, Admin!</h1>
+<h1>Admin section</h1>
 
 <?php
 	include './partials/body_end.php';
