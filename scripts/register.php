@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "omts_at51";
+$dbname = "theatertestingcopy";
 
 try {
     $rpassword = $_POST['register-password'];

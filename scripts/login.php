@@ -5,7 +5,7 @@ one of the users in our database. */
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "omts_at51";
+$dbname = "theatertestingcopy";
   /* try connecting to the database. */
   try{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

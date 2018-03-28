@@ -1,5 +1,9 @@
 <?php
-/* List all the purchases said customer has made.*/
+/* 
+List all the purchases said customer has made.
+Expects to have a $_PUT["email"] (and if we are still using account no as primary
+then also         $_PUT["accountNumber"]
+*/
 $servername = "localhost";
 $username = "root";
 $password = "";
